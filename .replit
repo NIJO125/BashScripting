@@ -1,2 +1,2 @@
 language = "bash"
-run = "chmod +x ./main.sh"
+run = "chmod +x main.sh"

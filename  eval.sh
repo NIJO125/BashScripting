@@ -1,3 +1,4 @@
+#!/bin/bash
 cmd="ls /usr"
 echo "Output OF command $cmd -"
 eval $cmd 
