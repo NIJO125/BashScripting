@@ -1,0 +1,47 @@
+get process id
+
+pidof bash
+
+to get the multiple bash process
+
+ls -l /proc/2508/fd
+
+echo out with output.txt
+ echo "I am redirecting output to file " > output.txt
+Now, let's add some more output to the output.txt file:
+$ echo "I am adding another line to file" > output.txt
+cat output.txt
+I am adding another line to file
+
+s content of the output.txt file got erased and it only
+has the latest redirected content. To retain the previous content and append the latest
+redirected output to a file, use the operator '>>':
+$ echo "Adding one more line" >> output.txt
+$ cat output.txt
+I am adding another line to file
+Adding one more line
+
+To sort the output
+
+sort < output.txt
+
+We can also give a patch file as an input to the patch command in order to apply
+a patch.diff in a source code. The command patch is used to apply additional
+changes made in a file. Additional changes are provided as a diff file. A diff file
+contains the changes between the original and the modified file by running the diff
+command. For example, I have a patch file to apply on output.txt:
+$ cat patch.diff
+
+
+
+In general, errors are printed on a terminal so that it's easy for us to know the reason
+for an error. Printing both the errors and output on the terminal can be annoying
+because we have to manually look into each line and check whether the program
+encountered any error:
+$ cd / ; ls; cat hello.txt; cd /bin/; ls *.{py,sh}
+
+We can redirect stdin, stdout, and stderr together in a command or script or a
+combination of some of them.
+The following command redirects both stdout and stder:
+$ (ls /home/ ;cat hello.txt;) > log.txt 2>&1
+cat < ~/.bashrc > out.txt 2> err.txt
